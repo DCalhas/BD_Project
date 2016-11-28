@@ -110,17 +110,50 @@ create table Estado
 	foreign key(numero) references Reserva(numero));
 
 
-/*
-insert into User values ('12312412', 'Davi', '5555555');
-insert into User values ('000000', 'Ze', '66666661');
-insert into User values ('1111111112', 'Cris', '7777777');
-insert into User values ('12222222', 'FDP', '8888881'); 
 
-insert into Alugavel values('Rua AAA', "123", "BONITO");
+insert into User values (123456789, 'David', 911709934);
+insert into User values (123456788, 'Ze', 967512334);
+insert into User values (123456787, 'Cris', 911239911);
+insert into User values (123456786, 'Francisco', 910287720); 
+
+insert into Fiscal values('ist180980', 'Tecnico');
+insert into Fiscal values('ist181729', 'Tecnico');
+insert into Fiscal values('ist181505', 'Tecnico');
+
+insert into Edificio values('Avenida da Republica');
+insert into Edificio values('Avenida Rovisco Pais');
+insert into Edificio values('Avenida Fontes Pereira de Melo');
+
+insert into Alugavel values('Avenida da Republica', '1', 'adsasdsa');
+insert into Alugavel values('Avenida da Republica', '2', 'vacasasac');
+insert into Alugavel values('Avenida Rovisco Pais', '3', 'ascasca');
+insert into Alugavel values('Avenida Rovisco Pais', '4', 'wqofnqofq');
+insert into Alugavel values('Avenida Fontes Pereira de Melo', '5', 'acqwwqw');
+insert into Alugavel values('Avenida Fontes Pereira de Melo', '6', 'acqwsavaw');
+
+insert into Espaco values('Avenida da Republica', '1');
+insert into Espaco values('Avenida da Republica', '2');
+insert into Espaco values('Avenida Rovisco Pais', '3');
+insert into Espaco values('Avenida Rovisco Pais', '4');
+insert into Espaco values('Avenida Fontes Pereira de Melo', '5');
+insert into Espaco values('Avenida Fontes Pereira de Melo', '6');
+
+
+
+insert into Reserva values('1');
+insert into Reserva values('2');
+insert into Reserva values('3');
+insert into Reserva values('4');
+insert into Reserva values('5');
+insert into Reserva values('6');
+
+
+/*
+insert into Alugavel values('Rua ', "123", "BONITO");
 insert into Alugavel values('Rua BBB', '456', " BONITO");
 insert into Alugavel values('Rua CCC', '789', " BONITO");
 
-insert into fiscal values('pila', 'INESC');
+
 
 insert into Espaco values('Rua AAA', '12');
 insert into Espaco values('Rua BBB', '45');
@@ -134,7 +167,6 @@ insert into Oferta values('Rua AAA', '123', '1jan', '2jan', '1');
 
 insert into Reserva values('3333');
 
-insert into aluga values('Rua AAA', '123', '1jan', '5555555', '3333');
-*/
+insert into aluga values('Rua AAA', '123', '1jan', '5555555', '3333');*/
 
 
