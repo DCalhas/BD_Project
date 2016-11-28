@@ -131,14 +131,16 @@ insert into Alugavel values('Avenida Rovisco Pais', '4', 'wqofnqofq');
 insert into Alugavel values('Avenida Fontes Pereira de Melo', '5', 'acqwwqw');
 insert into Alugavel values('Avenida Fontes Pereira de Melo', '6', 'acqwsavaw');
 
+insert into Arrenda values('Avenida da Republica', '1', 123456789);
+insert into Arrenda values('Avenida da Republica', '2', 123456788);
+insert into Arrenda values('Avenida Rovisco Pais', '3', 123456787);
+
 insert into Espaco values('Avenida da Republica', '1');
 insert into Espaco values('Avenida da Republica', '2');
 insert into Espaco values('Avenida Rovisco Pais', '3');
 insert into Espaco values('Avenida Rovisco Pais', '4');
 insert into Espaco values('Avenida Fontes Pereira de Melo', '5');
 insert into Espaco values('Avenida Fontes Pereira de Melo', '6');
-
-
 
 insert into Reserva values('1');
 insert into Reserva values('2');
