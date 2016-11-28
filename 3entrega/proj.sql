@@ -76,12 +76,12 @@ create table Oferta
 	codigo		varchar(255) not null,
 	data_inicio varchar(255) not null,
 	data_fim	varchar(255) not null,
-	tarifa		varchar(255) not null,
+	tarifa		int(5) unsigned not null,
 	primary key(morada, codigo, data_inicio),
 	foreign key(morada, codigo) references Alugavel(morada, codigo));
 
 create table Reserva
-	(numero	varchar(255) not null,
+	(numero	int(9) unsigned not null,
 	primary key(numero));
 
 create table Aluga
@@ -89,21 +89,21 @@ create table Aluga
 	codigo 		varchar(255) not null,
 	data_inicio varchar(255) not null,
 	nif		int(9) unsigned not null,
-	numero 	varchar(255) not null,
+	numero 	int(9) unsigned not null,
 	primary key(morada, codigo, data_inicio, nif, numero),
 	foreign key(morada, codigo, data_inicio) references Oferta(morada, codigo, data_inicio),
 	foreign key(nif) references User(nif),
 	foreign key(numero) references Reserva(numero));
 
 create table Paga
-	(numero		varchar(255) not null,
+	(numero		int(9) unsigned not null,
 	data		varchar(255) not null,
 	metodo		varchar(255) not null,
 	primary key(numero),
 	foreign key(numero) references Reserva(numero));
 
 create table Estado 
-	(numero	varchar(255) not null,
+	(numero	int(9) unsigned not null,
 	timestamp varchar(255) not null,
 	estado	varchar(255) not null,
 	primary key(numero, timestamp),
@@ -145,8 +145,10 @@ insert into Alugavel values('Avenida Fontes Pereira de Melo', '62', 'acqwsava');
 
 insert into Arrenda values('Avenida da Republica', '1', 123456789);
 insert into Arrenda values('Avenida da Republica', '2', 123456788);
-insert into Arrenda values('Avenida Rovisco Pais', '3', 123456787);
 
+
+insert into Fiscaliza values('ist181505', 'Avenida da Republica', '1');
+insert into Fiscaliza values('ist181505', 'Avenida da Republica', '2');
 
 insert into Espaco values('Avenida da Republica', '1');
 insert into Espaco values('Avenida da Republica', '2');
@@ -168,13 +170,34 @@ insert into Posto values('Avenida Fontes Pereira de Melo', '52', '5');
 insert into Posto values('Avenida Fontes Pereira de Melo', '61', '6');
 insert into Posto values('Avenida Fontes Pereira de Melo', '62', '6');
 
+insert into Oferta values('Avenida Rovisco Pais', '3', '28Nov2016', '30Nov2016', 10);
+insert into Oferta values('Avenida Rovisco Pais', '31', '28Nov2016', '30Nov2016', 10);
+insert into Oferta values('Avenida Rovisco Pais', '32', '28Nov2016', '30Nov2016', 10);
+insert into Oferta values('Avenida Fontes Pereira de Melo', '6', '28Nov2016', '30Dez2016', 1000);
 
-insert into Reserva values('1');
-insert into Reserva values('2');
-insert into Reserva values('3');
-insert into Reserva values('4');
-insert into Reserva values('5');
-insert into Reserva values('6');
+
+insert into Reserva values(1);
+insert into Reserva values(2);
+insert into Reserva values(3);
+insert into Reserva values(4);
+insert into Reserva values(5);
+insert into Reserva values(6);
+
+insert into Aluga values('Avenida Rovisco Pais', '31', '28Nov2016', 123456789, 1);
+insert into Aluga values('Avenida Rovisco Pais', '32', '28Nov2016', 123456786, 2);
+insert into Aluga values('Avenida Fontes Pereira de Melo', '6', '28Nov2016', 123456788, 3);
+
+insert into Paga values(1, '30Nov2016', 'Multibanco');
+insert into Paga values(2, '30Nov2016', 'MasterCard');
+
+insert into Estado values(1, '28Nov2016', 'Pendente');
+insert into Estado values(1, '29Nov2016', 'Aceite');
+insert into Estado values(1, '30Nov2016', 'Pago');
+insert into Estado values(2, '28Nov2016', 'Pendente');
+insert into Estado values(2, '29Nov2016', 'Aceite');
+insert into Estado values(2, '30Nov2016', 'Pago');
+insert into Estado values(3, '28Nov2016', 'Pendente');
+insert into Estado values(3, '29Nov2016', 'Aceite');
 
 
 /*
