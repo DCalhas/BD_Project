@@ -63,25 +63,25 @@ insert into Oferta values('Avenida Rovisco Pais', '32', '2016-11-28', '2016-11-3
 insert into Oferta values('Avenida Fontes Pereira de Melo', '6', '2016-11-20', '2016-11-26', 1000);
 
 
-insert into Reserva values(1);
-insert into Reserva values(2);
-insert into Reserva values(3);
-insert into Reserva values(4);
-insert into Reserva values(5);
-insert into Reserva values(6);
+insert into Reserva values('1');
+insert into Reserva values('2');
+insert into Reserva values('3');
+insert into Reserva values('4');
+insert into Reserva values('5');
+insert into Reserva values('6');
 
-insert into Aluga values('Avenida Rovisco Pais', '31', '2016-11-28 00:01:00', 123456789, 1);
-insert into Aluga values('Avenida Rovisco Pais', '32', '2016-11-28 00:01:00', 123456786, 2);
-insert into Aluga values('Avenida Fontes Pereira de Melo', '6', '2016-11-20 00:01:00', 123456788, 3);
+insert into Aluga values('Avenida Rovisco Pais', '31', '2016-11-28 00:01:00', 123456789, '1');
+insert into Aluga values('Avenida Rovisco Pais', '32', '2016-11-28 00:01:00', 123456786, '2');
+insert into Aluga values('Avenida Fontes Pereira de Melo', '6', '2016-11-20 00:01:00', 123456788, '3');
 
-insert into Paga values(1, '2016-11-30 00:01:02', 'Multibanco');
-insert into Paga values(2, '2016-11-30 00:01:05', 'MasterCard');
+insert into Paga values('1', '2016-11-30 00:01:02', 'Multibanco');
+insert into Paga values('2', '2016-11-30 00:01:05', 'MasterCard');
 
-insert into Estado values(1, '2016-11-28 00:01:00', 'Pendente');
-insert into Estado values(1, '2016-11-28 00:01:01', 'Aceite');
-insert into Estado values(1, '2016-11-30 00:01:02', 'Pago');
-insert into Estado values(2, '2016-11-28 00:01:03', 'Pendente');
-insert into Estado values(2, '2016-11-29 00:01:04', 'Aceite');
-insert into Estado values(2, '2016-11-30 00:01:05', 'Pago');
-insert into Estado values(3, '2016-11-20 00:01:06', 'Pendente');
-insert into Estado values(3, '2016-11-21 00:01:07', 'Aceite');
+insert into Estado values('1', '2016-11-28 00:01:00', 'Pendente');
+insert into Estado values('1', '2016-11-28 00:01:01', 'Aceite');
+insert into Estado values('1', '2016-11-30 00:01:02', 'Pago');
+insert into Estado values('2', '2016-11-28 00:01:03', 'Pendente');
+insert into Estado values('2', '2016-11-29 00:01:04', 'Aceite');
+insert into Estado values('2', '2016-11-30 00:01:05', 'Pago');
+insert into Estado values('3', '2016-11-20 00:01:06', 'Pendente');
+insert into Estado values('3', '2016-11-21 00:01:07', 'Aceite');

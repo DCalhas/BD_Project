@@ -81,7 +81,7 @@ create table Oferta
 	foreign key(morada, codigo) references Alugavel(morada, codigo) on delete cascade);
 
 create table Reserva
-	(numero	int(9) unsigned not null,
+	(numero	varchar(10) not null,
 	primary key(numero));
 
 create table Aluga
@@ -89,21 +89,21 @@ create table Aluga
 	codigo 		varchar(255) not null,
 	data_inicio date not null,
 	nif		int(9) unsigned not null,
-	numero 	int(9) unsigned not null,
+	numero 	varchar(10) not null,
 	primary key(morada, codigo, data_inicio, nif, numero),
 	foreign key(morada, codigo, data_inicio) references Oferta(morada, codigo, data_inicio) on delete cascade,
 	foreign key(nif) references User(nif),
 	foreign key(numero) references Reserva(numero));
 
 create table Paga
-	(numero		int(9) unsigned not null,
+	(numero		varchar(10) not null,
 	data		date not null,
 	metodo		varchar(255) not null,
 	primary key(numero),
 	foreign key(numero) references Reserva(numero));
 
 create table Estado 
-	(numero	int(9) unsigned not null,
+	(numero	varchar(10) not null,
 	timestamp timestamp not null,
 	estado	varchar(255) not null,
 	primary key(numero, timestamp),
