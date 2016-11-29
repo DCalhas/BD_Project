@@ -74,8 +74,8 @@ create table Posto
 create table Oferta
 	(morada	varchar(255) not null,
 	codigo		varchar(255) not null,
-	data_inicio varchar(255) not null,
-	data_fim	varchar(255) not null,
+	data_inicio date not null,
+	data_fim	date not null,
 	tarifa		int(5) unsigned not null,
 	primary key(morada, codigo, data_inicio),
 	foreign key(morada, codigo) references Alugavel(morada, codigo));
@@ -87,7 +87,7 @@ create table Reserva
 create table Aluga
 	(morada	varchar(255) not null,
 	codigo 		varchar(255) not null,
-	data_inicio varchar(255) not null,
+	data_inicio date not null,
 	nif		int(9) unsigned not null,
 	numero 	int(9) unsigned not null,
 	primary key(morada, codigo, data_inicio, nif, numero),
@@ -97,14 +97,14 @@ create table Aluga
 
 create table Paga
 	(numero		int(9) unsigned not null,
-	data		varchar(255) not null,
+	data		date not null,
 	metodo		varchar(255) not null,
 	primary key(numero),
 	foreign key(numero) references Reserva(numero));
 
 create table Estado 
 	(numero	int(9) unsigned not null,
-	timestamp varchar(255) not null,
+	timestamp timestamp not null,
 	estado	varchar(255) not null,
 	primary key(numero, timestamp),
 	foreign key(numero) references Reserva(numero));
