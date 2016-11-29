@@ -28,11 +28,19 @@
 
 
 			echo("<table border=\"0\">\n");
-			echo("<tr><td>morada</td></tr>\n");
+			echo("<tr><td>morada</td><td>codigo</td><td>data_inicio</td><td>data_fim</td><td>tarifa</td></tr>\n");
 			foreach($result as $row) {
 				echo("<tr><td>");
 				echo($row['morada']);
-				echo("</td><td><a href=\"removerOferta.php?morada={$row['morada']}\">Remover</a>");
+				echo("</td><td>");
+				echo($row['codigo']);
+				echo("</td><td>");
+				echo($row['data_inicio']);
+				echo("</td><td>");
+				echo($row['data_fim']);
+				echo("</td><td>");
+				echo($row['tarifa']);
+				echo("</td><td><a href=\"removerOferta.php?data_inicio={$row['data_inicio']}\">Remover</a>");
 				echo("</td></tr>\n");
 			}
 			echo("</table>\n");
