@@ -26,9 +26,9 @@ select morada
 from aluga
 group by morada
 having count(morada) > (
-	select avg(counter)
+	select avg(numero_de_vezes_alugado)
 	from (
-		select count(morada) as counter, morada
+		select count(morada) as numero_de_vezes_alugado, morada
 		from aluga
 		group by morada) as bla);
 
