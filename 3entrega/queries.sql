@@ -3,7 +3,7 @@
 
 
 /*alinea a)*/
-
+	
 select morada, codigo
 from espaco
 where (morada, codigo) not in (
@@ -11,11 +11,9 @@ where (morada, codigo) not in (
 	from posto natural join  aluga 
 				natural join estado 
 	where estado = 'Aceite')
-	and (morada, codigo) not in(
-	select morada, codigo
-	from estado natural join  aluga  
-				natural join espaco
-	where estado = 'Aceite');
+	and (morada, codigo) in(
+	select morada, codigo_espaco as codigo
+	from posto);
 
 /*nao e ir pelo aluga, tem que ter o estado aceite*/
 
@@ -35,6 +33,9 @@ having count(morada) > (
 		group by morada) as bla);
 
 
+/*alinea c) quais os utilizadores cujos alugaveis foram sempre fiscalizados pelo mesmo fiscal*/
+
+
 select nif
 from user natural join (
 	select count(numero_de_vezes_do_mesmo_fiscal) as numero_fiscais, nif
@@ -45,23 +46,22 @@ from user natural join (
 	group by nif) as numero_fiscais_tabela
 where numero_fiscais = 1; 
 
-/*
-select sum(tarifa) * 365 as total_realizado, morada, codigo
-from ((select morada, codigo, tarifa
-	from espaco natural join aluga
-				natural join estado
-				natural join oferta
-	group by morada codigo
-	where estado = 'Pago' and timestamp like '%2016')
-	union
-	(select morada, codigo_espaco as codigo, tarifa
-	from posto natural join aluga
-				natural join estado
-				natural join oferta
-	group by morada, codigo
-	where estado = 'Pago' and timestamp like '%2016')) as bla
-group by morada, codigo;*/
 
+/*Qual o montante total realizado (pago) por cada espaço durante o ano de 2016?
+Assuma que a tarifa indicada na oferta é diária. Deve considerar os casos em que oespaço foi alugado
+totalmente ou por postos.*/
+/*---------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*---------------------------*/
 
 
 
