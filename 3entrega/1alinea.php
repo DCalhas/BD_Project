@@ -33,7 +33,7 @@
 			}
 			echo("</table>\n");
 
-			$sql = "SELECT morada, codigo FROM Espaco;";
+			$sql = "SELECT morada, codigo FROM espaco;";
 			$result = $db->query($sql);
 			echo("<h2>Espacos</h2>\n");
 
@@ -58,7 +58,7 @@
 			}
 			echo("</table>\n");
 
-			$sql = "SELECT morada, codigo, codigo_espaco FROM Posto;";
+			$sql = "SELECT morada, codigo, codigo_espaco FROM posto;";
 			$result = $db->query($sql);
 			echo("<h2>Postos</h2>\n");
 

@@ -28,7 +28,7 @@
 			echo("<tr><td>Numero</td></tr>\n");
 			foreach($result as $row) {
 				echo("<tr><td>");
-				echo($row['tarifa']);
+				echo($row['numero']);
 				echo("</td></tr>\n");
 			}
 			echo("</table>\n");
