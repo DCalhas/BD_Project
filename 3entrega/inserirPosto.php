@@ -15,7 +15,7 @@
 
 			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO Alugavel VALUES('$morada', '$codigo', '$fotografia'); INSERT INTO Posto VALUES('$morada', '$codigo', '$codigo_espaco');";
+			$sql = "INSERT INTO alugavel VALUES('$morada', '$codigo', '$fotografia'); INSERT INTO posto VALUES('$morada', '$codigo', '$codigo_espaco');";
 
 			echo("<p>$sql</p>");	
 			$db->query($sql);

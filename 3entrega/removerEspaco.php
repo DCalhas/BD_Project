@@ -13,7 +13,7 @@
 
 			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "DELETE FROM Espaco WHERE morada = '$morada' and codigo = '$codigo';";
+			$sql = "DELETE FROM espaco WHERE morada = '$morada' and codigo = '$codigo';";
 
 			echo("<p>$sql</p>");	
 			$db->query($sql);

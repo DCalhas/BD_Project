@@ -11,7 +11,7 @@
 
 			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT morada, codigo, data_inicio, data_fim, tarifa FROM Oferta;";
+			$sql = "SELECT morada, codigo, data_inicio, data_fim, tarifa FROM oferta;";
 			$result = $db->query($sql);
 			echo("<h2>Ofertas</h2>\n"); 	
 

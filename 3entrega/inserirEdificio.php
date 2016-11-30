@@ -12,7 +12,7 @@
 
 			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO Edificio VALUES('$morada');";
+			$sql = "INSERT INTO edificio VALUES('$morada');";
 
 			echo("<p>$sql</p>");	
 			$db->query($sql);

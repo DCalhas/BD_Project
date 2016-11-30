@@ -16,7 +16,7 @@
 			echo($max_number);
 			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO Reserva VALUES('$numero'); INSERT INTO Aluga VALUES('$morada', '$codigo', '$data_inicio', '$nif', '$numero');";
+			$sql = "INSERT INTO reserva VALUES('$numero'); INSERT INTO aluga VALUES('$morada', '$codigo', '$data_inicio', '$nif', '$numero');";
 
 			echo("<p>$sql</p>");	
 			$db->query($sql);

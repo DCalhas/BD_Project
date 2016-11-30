@@ -16,7 +16,7 @@
 
 			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO Oferta VALUES('$morada', '$codigo', '$data_inicio', '$data_fim', '$tarifa');";
+			$sql = "INSERT INTO oferta VALUES('$morada', '$codigo', '$data_inicio', '$data_fim', '$tarifa');";
 
 			echo("<p>$sql</p>");	
 			$db->query($sql);

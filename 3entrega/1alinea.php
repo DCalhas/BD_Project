@@ -11,7 +11,7 @@
 
 			$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT morada FROM Edificio;";
+			$sql = "SELECT morada FROM edificio;";
 			$result = $db->query($sql);
 			echo("<h2>Edificios</h2>\n");
 
