@@ -30,17 +30,17 @@ having count(morada) > (
 	from (
 		select count(morada) as numero_de_vezes_alugado, morada
 		from aluga
-		group by morada) as bla);
+		group by morada) as edificios_alugados_counter);
 
 
 /*alinea c) quais os utilizadores cujos alugaveis foram sempre fiscalizados pelo mesmo fiscal*/
 
 
-select nif
+select nif, nome, telefone
 from user natural join (
 	select count(numero_de_vezes_do_mesmo_fiscal) as numero_fiscais, nif
 	from (
-		select count(nif) as numero_de_vezes_do_mesmo_fiscal, nif
+		select count(id) as numero_de_vezes_do_mesmo_fiscal, nif
 		from fiscaliza natural join arrenda
 		group by id, nif) as numero_fiscais_por_user
 	group by nif) as numero_fiscais_tabela
