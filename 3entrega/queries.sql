@@ -75,7 +75,7 @@ from (select count(codigo) as numero_de_postos, morada, codigo_espaco
 		from posto 
 		group by morada, codigo_espaco) as numero_de_postos_por_espaco
 where (numero_de_postos, morada, codigo_espaco) in (
-	select count(codigo) as numero_de_postos, morada, codigo as codigo_espaco 
+	select count(codigo_posto) as numero_de_postos, morada, codigo as codigo_espaco 
 	from espaco natural join (
 		select morada, codigo as codigo_posto, codigo_espaco as codigo 
 		from posto natural join aluga 
