@@ -52,21 +52,27 @@ Assuma que a tarifa indicada na oferta é diária. Deve considerar os casos em q
 totalmente ou por postos.*/
 /*---------------------------*/
 
-select montante_total, morada, codigo
-from (
+select sum(montante_total), morada, codigo
+from (select *
+	from ((select *
+	from (
 	(select sum(montante_pago_posto) as montante_total, morada, codigo_espaco as codigo
 	from (
-		select tarifa * timestampdiff(day, data_inicio, '2016-12-31') as montante_pago_posto, morada, codigo, codigo_espaco 
+		select tarifa * timestampdiff(day, data_inicio, data_fim) as montante_pago_posto, morada, codigo, codigo_espaco 
 		from aluga natural join oferta 
 					natural join posto 
 		group by morada, codigo, codigo_espaco) as montante_postos)
 	union
-	(select tarifa * timestampdiff(day, data_inicio, '2016-12-31') as montante_total, morada, codigo 
+	(select tarifa * timestampdiff(day, data_inicio, data_fim) as montante_total, morada, codigo 
 	from aluga natural join espaco
 				natural join (
-					select distinct morada, codigo, tarifa
+					select distinct morada, codigo, data_fim, tarifa
 					from oferta) as oferta_personalized
-	group by morada, codigo)) as montante_total_tabela;
+	group by morada, codigo)) as bla)
+	union
+	(select 0 as montante_total, morada, codigo
+	from espaco)) as aasa) as asocias
+group by morada, codigo;
 
 
 
