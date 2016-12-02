@@ -68,10 +68,10 @@ from (select *
 				natural join (
 					select distinct morada, codigo, data_fim, tarifa
 					from oferta) as oferta_personalized
-	group by morada, codigo)) as bla)
+	group by morada, codigo)) as espacos_e_postos)
 	union
 	(select 0 as montante_total, morada, codigo
-	from espaco)) as aasa) as asocias
+	from espaco)) as principal_table) as final_table
 group by morada, codigo;
 
 

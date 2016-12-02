@@ -25,7 +25,6 @@
 
 			echo("<h3>Edificios</h3>\n");
 			echo("<table border=\"0\">\n");
-			echo("<tr><td>morada</td></tr>\n");
 			foreach($result as $row) {
 				echo("<tr><td>");
 				echo($row['morada']);
