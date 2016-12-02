@@ -24,8 +24,6 @@
 		catch (PDOException $e) {
 			echo("<p>ERROR: {$e->getMessage()}</p>");
 		}
-		header('Location: ' . $_SERVER["HTTP_REFERER"] );
-		exit;
-		?>
+		header( "refresh:5;url=1alinea.php" );		?>
 	</body>
 </html>

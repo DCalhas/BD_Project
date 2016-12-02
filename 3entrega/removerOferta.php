@@ -22,6 +22,7 @@
 		catch (PDOException $e) {
 			echo("<p>ERROR: {$e->getMessage()}</p>");
 		}
+		header( "refresh:5;url=2alinea.php" );
 		?>
 	</body>
 </html>
