@@ -30,8 +30,9 @@ create table data_dimensao (
 
 create table tempo_dimensao (
     tempo_id varchar(9) not null unique,
+    hora date not null,
+    minuto date not null,
     minuto_do_dia date not null,
-    hora_do_dia date not null,
     primary key(tempo_id));
 
 

@@ -17,17 +17,6 @@ insert into user_dimensao (nif, nome, telefone)
 select nif, nome, telefone
 from user;
 
-INSERT INTO data_dimensao
-SELECT @date := date_add(@date, interval 1 day) as date,
-    date_format(@date, "%Y%m%d") as id,
-    year(@date) as ano,
-    month(@date) as mes_do_ano,
-    day(@date) as dia_do_ano,
-    week(@date) as semana_do_ano,
-FROM T
-WHERE date_add(@date, interval 1 day) <= @d1
-ORDER BY date;
-
 
 insert into reserva_factos (numero, montante_pago, duracao)
 select numero, 
