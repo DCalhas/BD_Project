@@ -19,20 +19,18 @@ create table local_dimensao (
     primary key(local_id));
 
 create table data_dimensao (
-    data_id varchar(9) not null unique, --meter data_id do tipo date
+    data_id varchar(8) not null unique,
     dia_do_ano date not null,
-    semana_do_ano date not null,    --todas estas variaveis como sao parte da data_id bastava colocar 'as datepart(...., data_id)'
+    semana_do_ano date not null,
    	mes_do_ano date not null,
    	semestre_do_ano date not null,
    	ano date not null,
-   	data_pagamento date not null,
     primary key(data_id));
 
 create table tempo_dimensao (
-    tempo_id varchar(9) not null unique, --procurar se existe alguma cena que nos de horas -> TIME data type 
-    hora date not null,     -- e isto ficava do genero 'as hourpart(..., tempo_id)'
+    tempo_id varchar(9) not null unique,
+    hora date not null,
     minuto date not null,
-    minuto_do_dia date not null,
     primary key(tempo_id));
 
 
