@@ -1,0 +1,13 @@
+1º Query
+
+	create index morada_codigo on arrenda (morada, codigo) using hash;
+	arrenda ja tem um index-only plan para o nif, visto que o nif e uma foreign key e ele gera um index para essa coluna
+
+2º Query
+
+	
+	O index mais obvio para adicionar é um clustered index para o estado na tabela Estado, isto porque a query é muitas vezes utilizada, sendo portanto importante na nossa basede dados, e é mais caro ser clustered, mas iriamos beneficiar no longo prazo.
+
+	O outro index que faria sentido adicionar é um composite index using hash tendo como search keys a morada e codigo_espaco, isto ajudaria
+	na execucao da query no sentido em que quando se faz select distinct so teriamos que ver as entradas da hash que validam as condicoes, e
+	tambem seria eficiente para a verificacao do not in da query.
