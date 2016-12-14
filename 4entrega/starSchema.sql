@@ -19,18 +19,18 @@ create table local_dimensao (
     primary key(local_id));
 
 create table data_dimensao (
-    data_id varchar(8) not null unique,
-    dia_do_ano date not null,
-    semana_do_ano date not null,
-   	mes_do_ano date not null,
-   	semestre_do_ano date not null,
-   	ano date not null,
+    data_id int(6) not null unique,
+    dia_do_ano int(2) not null,
+    semana_do_ano int(2) not null,
+   	mes_do_ano int(2) not null,
+   	semestre_do_ano int(1) not null,
+   	ano int(4) not null,
     primary key(data_id));
 
 create table tempo_dimensao (
-    tempo_id varchar(9) not null unique,
-    hora date not null,
-    minuto date not null,
+    tempo_id int(4) not null unique,
+    hora int(2) not null,
+    minuto int(2) not null,
     primary key(tempo_id));
 
 
