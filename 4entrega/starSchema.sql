@@ -41,7 +41,7 @@ create table reserva_factos (
     tempo_id int(4) not null,
     data_id int(8) not null,
     montante_pago numeric(19,4) not null,
-    duracao date not null,
+    duracao int(8) not null,
     foreign key(user_id) references user_dimensao(nif),
     foreign key(local_id) references local_dimensao(local_id),
     foreign key(tempo_id) references tempo_dimensao(tempo_id),
