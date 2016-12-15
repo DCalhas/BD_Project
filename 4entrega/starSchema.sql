@@ -13,7 +13,7 @@ create table user_dimensao (
 
 create table local_dimensao (
     local_id varchar(510) not null unique,
-    posto_codigo varchar(255) not null,
+    posto_codigo varchar(255),
     espaco_codigo varchar(255) not null,
     edificio_morada varchar(255) not null,
     primary key(local_id));
