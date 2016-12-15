@@ -12,14 +12,14 @@ create table user_dimensao (
     primary key(nif));
 
 create table local_dimensao (
-    local_id varchar(765) not null unique,
+    local_id varchar(510) not null unique,
     posto_codigo varchar(255) not null,
     espaco_codigo varchar(255) not null,
     edificio_morada varchar(255) not null,
     primary key(local_id));
 
 create table data_dimensao (
-    data_id int(6) not null unique,
+    data_id int(8) not null unique,
     dia_do_ano int(2) not null,
     semana_do_ano int(2) not null,
    	mes_do_ano int(2) not null,
@@ -37,9 +37,9 @@ create table tempo_dimensao (
 create table reserva_factos (
     numero varchar(255) not null unique,
     user_id varchar(9) not null,
-    local_id varchar(9) not null,
-    tempo_id varchar(9) not null,
-    data_id varchar(9) not null,
+    local_id varchar(510) not null,
+    tempo_id int(4) not null,
+    data_id int(8) not null,
     montante_pago numeric(19,4) not null,
     duracao date not null,
     foreign key(user_id) references user_dimensao(nif),
