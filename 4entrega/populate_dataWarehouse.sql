@@ -43,7 +43,7 @@ BEGIN
    DECLARE v_full_date DATETIME;
    DECLARE semester int(1);
    SET v_full_date = '2016-01-01 00:00:00';
-   WHILE v_full_date < '2017-01-01 00:00:00' DO
+   WHILE v_full_date < '2018-01-01 00:00:00' DO
        IF month(v_full_date) > 6 
         THEN SET semester = 2; 
         ELSE SET semester = 1;
