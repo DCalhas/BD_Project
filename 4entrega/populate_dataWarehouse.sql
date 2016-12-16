@@ -17,13 +17,13 @@ insert into user_dimensao (nif, nome, telefone)
 select nif, nome, telefone
 from user;
 
-
+drop procedure if exists load_time_dim;
 delimiter //
 CREATE PROCEDURE load_time_dim()
 BEGIN
-   DECLARE v_full_time TIME;
-   SET v_full_time = '00:00:00';
-   WHILE v_full_time < '23:59:01' DO
+   DECLARE v_full_time DATETIME;
+   SET v_full_time = '2016-10-10 00:00:00';
+   WHILE v_full_time < '2016-10-10 23:59:01' DO
        INSERT INTO tempo_dimensao VALUES (
            hour(v_full_time) * 100 + minute(v_full_time),
            hour(v_full_time),
@@ -36,7 +36,7 @@ END;
 delimiter ;
 call load_time_dim();
 
-
+drop procedure if exists load_date_dim;
 delimiter //
 CREATE PROCEDURE load_date_dim()
 BEGIN
